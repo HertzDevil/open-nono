@@ -2,7 +2,7 @@
 
 **OpenNono** is an open-source JavaScript port of *Nono o Sagase! Level 41!
 \~Nono to Fushigi na Ehon\~* (乃々を探せ！レベル41！～ののと不思議な絵本～), the 2019 April
-Fools' Day Minesweeper maze minigame from *THE IDOLM@STER Cinderella Girls:
+Fools' Day Minesweeper maze minigame from *THE iDOLM@STER Cinderella Girls:
 Starlight Stage*. It is also my first serious attempt at frontend web
 programming.
 
@@ -19,7 +19,7 @@ keyboard controls are available. Consult the help page for more details.
 
 ## Deviations from the original
 
-- 🦀🦀🦀🦀🦀 Almost all references to the Idolmaster series are gone!!! 🦀🦀🦀🦀🦀
+- 🦀🦀🦀🦀🦀 Almost all references to the iDOLM@STER series are gone!!! 🦀🦀🦀🦀🦀
 - It is now possible to use 5 Open skills of the same kind, even for shapes
   which were owned by fewer than 5 idols from the original minigame.
 - All Tomodachi Blocks now reveal 3 random mines (i.e. stage 2 / 3 variants are
