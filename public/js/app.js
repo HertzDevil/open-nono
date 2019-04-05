@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		const HEIGHT = Math.max(5, Math.min(30, parseInt(heightField.value)));
 
 		const MINES = Math.floor(WIDTH * HEIGHT * 0.15);
-		const TOMODACHI = Math.floor(WIDTH * HEIGHT * 0.02);
+		const TOMODACHI = Math.floor(WIDTH * HEIGHT * 0.01);
 
 		const ctrl = new NonoController(WIDTH, HEIGHT);
 		const view = new NonoView(ctrl, document);

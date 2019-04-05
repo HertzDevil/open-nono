@@ -6,8 +6,16 @@ Fools' Day Minesweeper maze minigame from *THE IDOLM@STER Cinderella Girls:
 Starlight Stage*. It is also my first serious attempt at frontend web
 programming.
 
-This port is hosted [here](http://hertzdevil.info/misc/nono/). Consult the help
-page for more details.
+This port is hosted [here](http://hertzdevil.info/misc/nono/). Both mouse and
+keyboard controls are available. Consult the help page for more details.
+
+## Roadmap
+
+- Current mine density is fixed at 15%, make it configurable
+- Current Tomodachi Block density is fixed at 1%, make it configurable
+- Display the active idol's position while flagging
+- What happens when an Open skill reveals a flagged tile?
+- Profile and optimize the code (might not be worth the effort)
 
 ## Deviations from the original
 

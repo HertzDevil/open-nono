@@ -55,6 +55,10 @@ export default class {
 	nextStage(inv, mines, tomodachi) {
 		this.ctrl_.clickNextButton(inv);
 		this.ctrl_.startGame(inv, mines, tomodachi);
+
+		for (const dom of this.domMap_.getElementsByClassName('nono-tile-text'))
+			dom.className = 'nono-tile-text';
+
 		this.startTimer(inv);
 	}
 
