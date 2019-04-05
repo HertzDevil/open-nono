@@ -1,10 +1,13 @@
 # OpenNono
 
 **OpenNono** is an open-source JavaScript port of *Nono o Sagase! Level 41!
-~Nono to Fushigi na Ehon~* (乃々を探せ！レベル41！～ののと不思議な絵本～), the 2019 April Fools'
-Day Minesweeper maze minigame from *THE IDOLM@STER Cinderella Girls: Starlight Stage*.
-It is also my first serious attempt at frontend web programming. Play it
-[here](http://hertzdevil.info/misc/nono/).
+\~Nono to Fushigi na Ehon\~* (乃々を探せ！レベル41！～ののと不思議な絵本～), the 2019 April
+Fools' Day Minesweeper maze minigame from *THE IDOLM@STER Cinderella Girls:
+Starlight Stage*. It is also my first serious attempt at frontend web
+programming.
+
+This port is hosted [here](http://hertzdevil.info/misc/nono/). Consult the help
+page for more details.
 
 ## Deviations from the original
 
@@ -18,6 +21,12 @@ It is also my first serious attempt at frontend web programming. Play it
 
 Everything works out-of-the-box on any modern browser that supports ES6. There
 is a Grunt task that concatenates and uglifies all JavaScript files.
+
+## Change log
+
+### Version 1.0.0 - April 5 2019
+
+- Initial release
 
 ## License
 

@@ -67,14 +67,14 @@ document.addEventListener('DOMContentLoaded', () => {
 			alert('Width must be an integer.');
 			return;
 		}
-		const WIDTH = Math.max(5, Math.min(99, parseInt(widthField)));
+		const WIDTH = Math.max(5, Math.min(99, parseInt(widthField.value)));
 
 		const heightField = document.getElementById('nono-config-height');
 		if (!/^[1-9][0-9]*$/.test(heightField.value)) {
 			alert('Height must be an integer.');
 			return;
 		}
-		const HEIGHT = Math.max(5, Math.min(30, parseInt(widthHeight)));
+		const HEIGHT = Math.max(5, Math.min(30, parseInt(heightField.value)));
 
 		const MINES = Math.floor(WIDTH * HEIGHT * 0.15);
 		const TOMODACHI = Math.floor(WIDTH * HEIGHT * 0.02);
