@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/style.css">
+		<title>OpenNono</title>
+	</head>
+	<body class="nono-help">
+		<h1>OpenNono</h1>
+		<section id="h-description">
+			<h2>Description</h2>
+			<p>
+				<strong>OpenNono</strong> is an <a href="" target="_blank" rel="noopener">
+				open-source</a> JavaScript port of
+				<cite title="乃々を探せ！レベル41！～ののと不思議な絵本～"><a href="#h-nono">
+					Nono o Sagase! Level 41! ~Nono to Fushigi na Ehon~
+				</a></cite>, a Minesweeper maze game.
+				The goal of the game is to navigate the player's idols, or whatever remains of them,
+				from the entry of the map to the goal on the right edge, without stepping on any of
+				the hidden mines.
+			</p>
+			<!--
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non nisl condimentum, dictum metus id, vehicula urna. Morbi eros tellus, posuere eget eros ut, facilisis volutpat enim. Pellentesque eget quam non augue rutrum imperdiet. Duis mollis lobortis congue. Donec sit amet faucibus odio, at efficitur dolor. Sed consequat, leo eu lacinia aliquam, dui nisi fermentum est, non tempus metus odio nec nulla. Pellentesque lobortis quam vel nibh euismod, id gravida justo hendrerit. Praesent euismod, augue at hendrerit tempor, nulla ante dignissim nisl, sed hendrerit lacus diam vel eros.</p>
+			<p>Etiam fermentum euismod dictum. Aliquam erat volutpat. Nullam et vehicula erat. In nec ligula consectetur, malesuada arcu at, molestie ipsum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas sed urna in turpis dapibus fermentum lobortis vitae erat. Morbi accumsan enim nec tellus accumsan, et luctus dolor dictum. Vestibulum ut mattis nisi. Morbi rhoncus urna eu nisl venenatis, nec lobortis risus faucibus. Maecenas eu vulputate enim. Nulla facilisi. Morbi pharetra nisi sem, in finibus sem lobortis et. Donec mollis tincidunt vestibulum. Morbi lacinia ipsum a dictum porta. Ut congue egestas augue, ut congue eros egestas vitae. Suspendisse potenti.</p>
+			<p>Mauris ex purus, imperdiet non accumsan at, volutpat mollis nisl. Suspendisse fringilla arcu in lorem rhoncus, non aliquam sem feugiat. Nam urna ante, faucibus eget efficitur a, efficitur eu libero. Vestibulum in dui vitae augue euismod ornare. Nulla id dolor dui. Nam in orci mollis, pharetra quam et, consequat tellus. Cras accumsan hendrerit ex, vitae ultricies velit ultricies eu.</p>
+			<p>Maecenas pharetra odio sed semper interdum. In velit purus, fermentum id est id, tempor fringilla ante. Donec tempus arcu eget justo dapibus, vitae varius metus luctus. Donec consectetur enim eget odio cursus bibendum. Donec vel metus velit. Maecenas non justo porttitor, ornare velit sit amet, fringilla diam. Etiam dolor neque, rhoncus eu lobortis ac, vehicula sed elit. Cras elit libero, sollicitudin vitae enim eu, condimentum rutrum mi. Donec dignissim, ipsum vel pretium fringilla, ipsum lectus placerat nisl, ac sagittis erat neque in metus. Donec a nunc scelerisque, efficitur sapien in, commodo mi.</p>
+			<p>Fusce aliquet nisi eget ante faucibus, vel eleifend sapien molestie. Nunc pharetra, mi id rhoncus pulvinar, enim velit efficitur libero, ut finibus velit metus ut velit. Pellentesque id aliquam nisi, ut gravida mauris. Phasellus ligula odio, congue a dignissim in, interdum rhoncus massa. Etiam vitae ultricies dolor. Nam vitae nibh lobortis velit laoreet congue nec sit amet dolor. Sed sit amet nulla at neque ornare volutpat ac sit amet massa. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean sed lacus imperdiet, auctor arcu venenatis, elementum ipsum. Cras a est ac risus malesuada efficitur a sed purus. Vivamus justo velit, dictum eu commodo eget, condimentum sed justo. Etiam faucibus sem mi, vel fermentum lacus elementum a.</p>
+			-->
+		</section>
+		<section id="h-tiles">
+			<h2>Tiles</h2>
+			<table class="nono-help-table">
+				<tr>
+					<th style="width:25%">Tile(s)</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td><div class="nono-map-tile"><div class="nono-tile-text"></div><div></td>
+					<td>Unrevealed tile.</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="nono-map-tile nono-tile-revealed"><div class="nono-tile-text nono-tile-number1">1</div></div>
+						<div class="nono-map-tile nono-tile-revealed"><div class="nono-tile-text nono-tile-number2">2</div></div>
+						<div class="nono-map-tile nono-tile-revealed"><div class="nono-tile-text nono-tile-number3">3</div></div>
+						<div class="nono-map-tile nono-tile-revealed"><div class="nono-tile-text nono-tile-number4">4</div></div>
+						<div class="nono-map-tile nono-tile-revealed"><div class="nono-tile-text nono-tile-number5">5</div></div>
+						<div class="nono-map-tile nono-tile-revealed"><div class="nono-tile-text nono-tile-number6">6</div></div>
+						<div class="nono-map-tile nono-tile-revealed"><div class="nono-tile-text nono-tile-number7">7</div></div>
+						<div class="nono-map-tile nono-tile-revealed"><div class="nono-tile-text nono-tile-number8">8</div></div>
+					</td>
+					<td>Revealed tiles. The count indicates the total number of surrounding tiles that contain mines.</td>
+				</tr>
+				<tr>
+					<td><div class="nono-map-tile nono-tile-revealed"><div class="nono-tile-text"></div></div></td>
+					<td>Revealed tile with no mines around. Automatically reveals nearby tiles.</td>
+				</tr>
+				<tr>
+					<td><div class="nono-map-tile nono-tile-revealed nono-tile-mine"><div class="nono-tile-text"></div></div></td>
+					<td>Revealed mine. Kills the idol when stepped on; you lose if your last idol is killed.</td>
+				</tr>
+				<tr>
+					<td><div class="nono-map-tile"><div class="nono-tile-text nono-tile-numberF">F</div></div></td>
+					<td>Flagged tile. Flags cannot be placed on revealed tiles, and conversely flagged tiles are never revealed.</td>
+				</tr>
+				<tr>
+					<td><div class="nono-map-tile nono-tile-revealed nono-map-cursor-outer"><div class="nono-tile-text"></div><div id="nono-entry-text">ENTRY</div></div></td>
+					<td>Entry of the map. Your idols start here.</td>
+				</tr>
+				<tr>
+					<td><div class="nono-map-tile"><div class="nono-tile-text"></div><div id="nono-entry-text">GOAL</div></div></td>
+					<td>Goal of the map. You win if your idols reach this tile.</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="nono-map-tile nono-tile-tomodachi"><div class="nono-tile-text"></div></div>
+						<div class="nono-map-tile nono-tile-revealed nono-tile-tomodachi"><div class="nono-tile-text"></div></div>
+					</td>
+					<td>Tomodachi Blocks. These never contain mines. Stepping on one reveals 3 random mines.</td>
+				</tr>
+			</table>
+		</section>
+		<section id="h-controls">
+			<h2>Controls</h2>
+			<ul>
+				<li>
+					<div class="nono-list-name">Arrow keys</div>
+					<div class="nono-list-def">
+						Moves the cursor. When the flagging mode is off, this also moves the active idol and then
+						reveals the tile beneath the idol.
+					</div>
+				</li>
+				<li>
+					<div class="nono-list-name">Left mouse click</div>
+					<div class="nono-list-def">
+						While in flagging mode, places or removes a flag at the cursor tile; otherwise, moves
+						the active idol to the tile under the mouse cursor, and reveals that tile. The idol
+						cannot move to unrevealed tiles that are not adjacent to any revealed tiles.
+					</div>
+				</li>
+				<li>
+					<div class="nono-list-name">F key</div>
+					<div class="nono-list-def">Toggles flagging mode on or off.</div>
+				</li>
+				<li>
+					<div class="nono-list-name">Space key</div>
+					<div class="nono-list-def">
+						While in flagging mode, places or removes a flag at the cursor tile.
+						While using an Open skill, rotates the shape of the tiles to be revealed.
+					</div>
+				</li>
+				<li>
+					<div class="nono-list-name">1 / 2 / 3 / 4 / 5 key</div>
+					<div class="nono-list-def">
+						Selects one of the idols. Dead idols cannot be selected as an active idol.
+						Also used to select the skill target.
+					</div>
+				</li>
+				<li>
+					<div class="nono-list-name">S key</div>
+					<div class="nono-list-def">Uses the active idol's skill, or cancels the skill being used.</div>
+				</li>
+				<li>
+					<div class="nono-list-name">N key</div>
+					<div class="nono-list-def">After reaching the goal, proceeds to the next stage.</div>
+				</li>
+			</ul>
+		</section>
+		<section id="h-skills">
+			<h2>Skills</h2>
+			<p>
+				Each idol can equip a skill that aids the player during the game. Every skill is associated with
+				a cool time; using a skill resets its charge to the cool time, and the skill cannot be used again
+				until its charge is zero. Revealing a tile reduces the charge of all skills on living idols by 1,
+				and all idols can use their skills at the beginning of every level.
+			</p>
+			<p>
+				The different skill types are as follows:
+			</p>
+			<table class="nono-help-table">
+				<tr>
+					<th style="width:8%;">Type</th>
+					<th style="width:12%;">Cool time</th>
+					<th style="width:20%;">Target</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td>None</td>
+					<td>N/A</td>
+					<td>None</td>
+					<td>Does nothing. Cannot be used.</td>
+				</tr>
+				<tr>
+					<td>Open</td>
+					<td>5 / 10 / 14 / 18 / 22</td>
+					<td>N/A</td>
+					<td>
+						Reveals 1 to 5 tiles within a given shape oriented along a chosen direction relative to the idol.
+						Mines on these tiles are revealed without killing the idol. The cool time is higher for shapes
+						that contain more tiles.
+					</td>
+				</tr>
+				<tr>
+					<td>Heal</td>
+					<td>28</td>
+					<td>Any dead idol</td>
+					<td>Revives a dead idol.</td>
+				</tr>
+				<tr>
+					<td>Guard</td>
+					<td>40</td>
+					<td>Current idol, if this skill is not activated</td>
+					<td>
+						Allows the idol to step on a mine without dying, once. The skill loses its effect
+						if the player switches to another idol.
+					</td>
+				</tr>
+				<tr>
+					<td>Quick</td>
+					<td>4 / 5 / 6 / 7</td>
+					<td>Any living idol with a skill not fully charged</td>
+					<td>Reduces the charge of the targeted idol's skill by (2 + the cool time of this skill).</td>
+				</tr>
+				<tr>
+					<td>Special</td>
+					<td>55</td>
+					<td>Current idol</td>
+					<td>Randomly converts 2 tiles into Tomodachi Blocks. At most one idol may equip this skill.</td>
+				</tr>
+			</table>
+		</section>
+		<section id="h-similar">
+			<h2>Similar titles</h2>
+			<ul>
+				<li>
+					<div class="nono-list-name">
+						<cite><a href="https://www.hpcalc.org/details/8843" target="_blank" rel="noopener">
+						Minehunt</a></cite> by Hewlett-Packard
+					</div>
+					<div class="nono-list-def">
+						A Minesweeper maze game for the HP 48 series graphing calculators. The map
+						dimension is fixed at 16 × 8 and contains 16 randomly placed mines. Tiles
+						do not flood-fill surrounding tiles when revealed, and only the clue for
+						the player's current tile is available at any time. It is possible that
+						the starting position is entirely surrounded by mines.
+						<ul>
+							<li>
+								<div class="nono-list-name">
+									<cite><a href="https://github.com/andrewgremlich/snow-edge" target="_blank" rel="noopener">
+									SNOWEDGE</a></cite> by Andrew Gremlich
+								</div>
+								<div class="nono-list-def">
+									Web clone of the above calculator game. A text terminal
+									<a href="https://github.com/andrewgremlich/rust_edge" target="_blank" rel="noopener">
+									Rust port</a> from the same author appears to be in the works.
+								</div>
+							</li>
+							<li>
+								<div class="nono-list-name">
+									<cite><a href="https://www.facebook.com/Maze-Frontier-1438670762925272/" target="_blank" rel="noopener">
+									Maze Frontier</a></cite> by MAGIC SEVEN
+								</div>
+								<div class="nono-list-def">
+									An Android / iOS maze game with Minesweeper elements. The player has 4 lives and can
+									cross through diagonally adjacent mines. Flood-filling is limited to the 8 immediately
+									surrounding tiles around the player. Story maps have entirely deterministic layouts; the
+									game's endless mode generates random Minesweeper levels, and guarantees there are no
+									mines near the starting position.
+								</div>
+							</li>
+							<li>
+								<div class="nono-list-name">
+									<cite><a href="https://github.com/Antephus/Maze-Minesweeper" target="_blank" rel="noopener">
+									Maze-Minesweeper</a></cite> by Antephus, AllyT94, jblomme, and LoPCY7
+								</div>
+								<div class="nono-list-def">
+									Very incomplete, but it shows up as one of the top search results for "minesweeper maze".
+								</div>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li id="h-nono">
+					<div class="nono-list-name">
+						<cite title="乃々を探せ！レベル41！～ののと不思議な絵本～">
+							<a href="https://twitter.com/imascg_stage/status/1112370119592701953" target="_blank" rel="noopener">
+							Nono o Sagase! Level 41! ~Nono to Fushigi na Ehon~</a>
+						</cite> by Cygames / BANDAI NAMCO Entertainment
+					</div>
+					<div class="nono-list-def">
+						The original source of this port, available as the 2019 April Fools' Day exclusive minigame of
+						<cite>THE IDOLM@STER Cinderella Girls: Starlight Stage</cite>. The main differences are that
+						it is now possible to use 5 Open skills of the same kind, even for shapes which were owned by
+						fewer than 5 idols from the original minigame; and that all Tomodachi Blocks now reveal 3
+						random mines (i.e. stage 2 / 3 variants are not implemented).
+					</div>
+				</li>
+				<li>
+					<div class="nono-list-name">
+						<cite><a href="https://appadvice.com/app/minesweeper-maze/1313603298" target="_blank" rel="noopener">
+						Minesweeper Maze</a></cite> by Dan Liu
+					</div>
+					<div class="nono-list-def">
+						An iOS application no longer available from the Apple App Store. The screenshots suggest
+						that player movement is separate from tile revealing, and that additional walls on tile
+						boundaries can be revealed that constrain player movement.
+					</div>
+				</li>
+			</ul>
+		</section>
+		<section id="h-license">
+			<h2>License</h2>
+			<p>
+Copyright 2019 HertzDevil
+			</p><p>
+Permission to use, copy, modify, and/or distribute this software for any purpose
+with or without fee is hereby granted, provided that the above copyright notice
+and this permission notice appear in all copies.
+			</p><p>
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND
+FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS
+OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF
+THIS SOFTWARE.
+			</p>
+		</section>
+	</body>
+</html>

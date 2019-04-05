@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/style.css">
+		<script src="js/app.js" type="module"></script>
+		<title>OpenNono</title>
+	</head>
+	<body>
+		<div class="nono-container" id="nono-main-screen" style="display:none;">
+			<header class="nono-header nono-item">
+				<div class="nono-title">OpenNono</div>
+				<a href="help.html" target="_blank" rel="noopener" class="nono-help-a">(?)</a>
+			</header>
+			<div class="nono-body nono-item">
+				<div id="nono-map-outer">
+					<table id="nono-map"></table>
+				</div>
+			</div>
+			<footer class="nono-footer nono-item">
+				<div class="nono-footer-area" id="nono-idol-button-container"></div>
+				<div class="nono-footer-area">
+					<button id="nono-flag-button">Flag <kbd>F</kbd></button>
+					<button id="nono-skill-button">Skill <kbd>S</kbd></button>
+					<button id="nono-next-button">Next stage <kbd>N</kbd></button>
+				</div>
+				<div class="nono-footer-area">
+					<p>Position: <span id="nono-footer-pos">(1, 1)</span></p>
+					<p>Time: <span id="nono-footer-timer">00:00</span></p>
+					<p>Games cleared: <span id="nono-footer-cleared">0</span></p>
+				</div>
+			</footer>
+		</div>
+		<div class="nono-container" id="nono-select-screen" style="display:flex;">
+			<header class="nono-header nono-item">
+				<div class="nono-title">OpenNono</div>
+				<a href="help.html" target="_blank" rel="noopener" class="nono-help-a">(?)</a>
+			</header>
+			<div class="nono-body nono-item">
+				<div id="nono-idol-select-row">
+					<div class="nono-idol-select" nono-idol-index="0">
+						<h2>Idol 1</h2>
+						<h3>Skill</h3>
+						<select class="nono-skill-select" name="Skill" required></select>
+						<h3>Cool time</h3>
+						<div class="nono-skill-cool"></div>
+						<h3>Description</h3>
+						<div class="nono-skill-desc"></div>
+					</div>
+					<div class="nono-idol-select" nono-idol-index="1">
+						<h2>Idol 2</h2>
+						<h3>Skill</h3>
+						<select class="nono-skill-select" name="Skill" required></select>
+						<h3>Cool time</h3>
+						<div class="nono-skill-cool"></div>
+						<h3>Description</h3>
+						<div class="nono-skill-desc"></div>
+					</div>
+					<div class="nono-idol-select" nono-idol-index="2">
+						<h2>Idol 3</h2>
+						<h3>Skill</h3>
+						<select class="nono-skill-select" name="Skill" required></select>
+						<h3>Cool time</h3>
+						<div class="nono-skill-cool"></div>
+						<h3>Description</h3>
+						<div class="nono-skill-desc"></div>
+					</div>
+					<div class="nono-idol-select" nono-idol-index="3">
+						<h2>Idol 4</h2>
+						<h3>Skill</h3>
+						<select class="nono-skill-select" name="Skill" required></select>
+						<h3>Cool time</h3>
+						<div class="nono-skill-cool"></div>
+						<h3>Description</h3>
+						<div class="nono-skill-desc"></div>
+					</div>
+					<div class="nono-idol-select" nono-idol-index="4">
+						<h2>Idol 5</h2>
+						<h3>Skill</h3>
+						<select class="nono-skill-select" name="Skill" required></select>
+						<h3>Cool time</h3>
+						<div class="nono-skill-cool"></div>
+						<h3>Description</h3>
+						<div class="nono-skill-desc"></div>
+					</div>
+				</div>
+			</div>
+			<footer class="nono-footer nono-item">
+				<form id="nono-config">
+					<p>
+					Width: <input id="nono-config-width" type="number" name="width" min="5" max="99" value="40" required>
+					</p>
+					<p>
+					Height: <input id="nono-config-height" type="number" name="height" min="5" max="30" value="6" required>
+					</p>
+				</form>
+				<button id="nono-button-go">Go!</button>
+			</footer>
+		</div>
+	</body>
+</html>
